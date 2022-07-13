@@ -1,0 +1,21 @@
+<div class="card-body">
+  <p [hidden]="documents.length>0">Please execute query</p>
+  <input class="me-md-2" type="text" placeholder="token1" [(ngModel)]="token1">
+  <input class="me-md-2" type="text" placeholder="token2" [(ngModel)]="token2">
+  <input class="me-md-2" type="text" placeholder="token3" [(ngModel)]="token3">
+  <button class="btn btn-info my-2 my-sm-0" type="button" [disabled]="disableQuery()" (click)="onQuery()">Search</button>
+<table class="table table-hover" [hidden]="documents.length==0">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Content</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let doc of documents">
+    <td>{{doc.id}}</td>
+    <td>{{doc.content}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
